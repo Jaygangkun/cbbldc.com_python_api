@@ -1,0 +1,11 @@
+[Unit]
+Description= This is a Gunicorn instance from PieceX tutorial for our hello world application
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/var/www/calcserver
+Environment="PATH=/var/www/calcserver/env/bin"
+ExecStart=/var/www/calcserver/env/bin/gunicorn -workers 3 - bind unix:flaskproject.sock -m 007 wsgi:app
+[Install]
+WantedBy=multi-user.target

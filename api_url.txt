@@ -1,0 +1,1 @@
+http://localhost:5002/calculate/?logg=2.00&teff=8500&logz=-1.5
