@@ -3,7 +3,7 @@ import sys
 
 class Calc:
     def calculate(self, in_logg, in_teff, in_logz):
-        file = open('LDC.txt', 'r')
+        file = open('LDCQ2.txt', 'r')
 
         xin_logg = float('100000')
         if in_logg < 0.00:
