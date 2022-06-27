@@ -1,6 +1,7 @@
 import json
 from flask import Flask, jsonify, request
 from calc import Calc
+from calcq2 import Calcq2
 
 app = Flask(__name__)
 
@@ -12,12 +13,21 @@ def after_request(response):
   return response
   
 @app.route('/calculate/', methods=['GET', 'POST'])
-def welcome():
+def calculate():
     logg = request.args.get('logg', default = 2, type = float)
     teff = request.args.get('teff', default = 8500, type = float)
     logz = request.args.get('logz', default = -1.5, type = float)
     
     calc_obj = Calc()
+    return calc_obj.calculate(logg, teff, logz)
+
+@app.route('/calculate2/', methods=['GET', 'POST'])
+def calculate2():
+    logg = request.args.get('logg', default = 2, type = float)
+    teff = request.args.get('teff', default = 8500, type = float)
+    logz = request.args.get('logz', default = -1.5, type = float)
+    
+    calc_obj = Calcq2()
     return calc_obj.calculate(logg, teff, logz)
 
 if __name__ == '__main__':

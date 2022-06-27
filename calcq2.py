@@ -1,7 +1,7 @@
 from flask import jsonify
 import sys
 
-class Calc:
+class Calcq2:
     def calculate(self, in_logg, in_teff, in_logz):
         file = open('LDCQ2.txt', 'r')
 
