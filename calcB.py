@@ -1,9 +1,9 @@
 from flask import jsonify
 import sys
 
-class Calcq2:
+class CalcB:
     def calculate(self, in_logg, in_teff, in_logz, in_vel):
-        file = open('LDCQ2.txt', 'r')
+        file = open('LDC.txt', 'r')
         
         xin_logg = float('100000')
         if in_logg < 0.00:
