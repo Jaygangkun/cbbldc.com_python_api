@@ -19,18 +19,20 @@ def calculate():
     logg = request.args.get('logg', default = 2, type = float)
     teff = request.args.get('teff', default = 8500, type = float)
     logz = request.args.get('logz', default = -1.5, type = float)
+    vel = request.args.get('vel', default = 0.5, type = float)
     
-    calc_obj = Calc()
-    return calc_obj.calculate(logg, teff, logz)
+    calc_obj = CalcB()
+    return calc_obj.calculate(logg, teff, logz, vel)
 
 @app.route('/calculate2/', methods=['GET', 'POST'])
 def calculate2():
     logg = request.args.get('logg', default = 2, type = float)
     teff = request.args.get('teff', default = 8500, type = float)
     logz = request.args.get('logz', default = -1.5, type = float)
+    vel = request.args.get('vel', default = 0.5, type = float)
     
-    calc_obj = Calcq2()
-    return calc_obj.calculate(logg, teff, logz)
+    calc_obj = Calcq2B()
+    return calc_obj.calculate(logg, teff, logz, vel)
 
 @app.route('/calculate-test/', methods=['GET', 'POST'])
 def calculateTest():
