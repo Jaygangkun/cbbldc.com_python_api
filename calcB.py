@@ -47,7 +47,7 @@ class CalcB:
         elif in_teff >= 4125 and in_teff < 4375:
             xin_teff = 4250
         elif in_teff >= 4375 and in_teff < 4625:
-            xin_teff = 4500                                 
+            xin_teff = 4500
         elif in_teff >= 4625 and in_teff < 4875:
             xin_teff = 4750
         elif in_teff >= 4875 and in_teff < 5125:
@@ -87,23 +87,25 @@ class CalcB:
         elif in_teff >= 9125 and in_teff < 9375:
             xin_teff = 9250
         elif in_teff >= 9375 and in_teff < 9625:
-            xin_teff = 9500
+            xin_teff = 9500    
         elif in_teff >= 9625 and in_teff < 9875:
-            xin_teff = 9750
+            xin_teff = 9750    
         elif in_teff >= 9875 and in_teff < 10125:
-            xin_teff = 10000
-        elif in_teff >= 10125 and in_teff < 10750:
-            xin_teff = 10500
-        elif in_teff >= 10750 and in_teff < 11250:
-            xin_teff = 11000
-        elif in_teff >= 11250 and in_teff < 11750:
-            xin_teff = 11500                               
-        elif in_teff >= 11750 and in_teff < 12250:
-            xin_teff = 12000
-        elif in_teff >= 12250 and in_teff < 12750:
-            xin_teff = 12500
-        elif in_teff >= 12750 and in_teff < 13250:
-            xin_teff = 13000    
+            xin_teff = 10000    
+        elif in_teff >= 10125 and in_teff < 10500:
+            xin_teff = 10250  
+        elif in_teff >= 10500 and in_teff < 11000:
+            xin_teff = 10750
+        elif in_teff >= 11000 and in_teff < 11500:
+            xin_teff = 11250
+        elif in_teff >= 11500 and in_teff < 12000:
+            xin_teff = 11750
+        elif in_teff >= 12000 and in_teff < 12500:
+            xin_teff = 12250
+        elif in_teff >= 12500 and in_teff < 13000:
+            xin_teff = 12750
+        elif in_teff >= 13000 and in_teff < 13250:
+            xin_teff = 13000         
         elif in_teff >= 13250 and in_teff < 14500:
             xin_teff = 14000
         elif in_teff >= 14500 and in_teff < 15500:
@@ -147,19 +149,33 @@ class CalcB:
         elif in_teff >= 33500 and in_teff < 34500:
             xin_teff = 34000
         elif in_teff >= 34500 and in_teff < 35500:
-            xin_teff = 35000                              
+            xin_teff = 35000    
         elif in_teff >= 35500 and in_teff < 36500:
+            xin_teff = 36000
+        elif in_teff >= 36500 and in_teff < 37250:
+            xin_teff = 37000
+        elif in_teff >= 37250 and in_teff < 37750:
             xin_teff = 37500
-        elif in_teff >= 36500 and in_teff < 41000:
+        elif in_teff >= 37750 and in_teff < 38500:
+            xin_teff = 38000
+        elif in_teff >= 38500 and in_teff < 39500:
+            xin_teff = 39000
+        elif in_teff >= 39500 and in_teff < 41500:
             xin_teff = 40000
-        elif in_teff >= 41000 and in_teff < 44000:
+        elif in_teff >= 41500 and in_teff < 42750:
             xin_teff = 42500
-        elif in_teff >= 44000 and in_teff < 46000:
+        elif in_teff >= 42750 and in_teff < 45500:
             xin_teff = 45000
-        elif in_teff >= 46000 and in_teff < 48250:
+        elif in_teff >= 45500 and in_teff < 46500:
+            xin_teff = 46000    
+        elif in_teff >= 46500 and in_teff < 47250:
+            xin_teff = 47000
+        elif in_teff >= 47250 and in_teff < 48750:
             xin_teff = 47500
-        elif in_teff >= 48250 and in_teff <= 50000:
-            xin_teff = 50000
+        elif in_teff >= 48750 and in_teff <= 49500:
+            xin_teff = 49000
+        elif in_teff >= 49500 and in_teff <= 50000:
+            xin_teff = 50000        
         elif in_teff > 50000:
             return jsonify({'success': False, 'message': 'Teff value out of range'})
             
@@ -491,7 +507,7 @@ class CalcB:
             except:
                 return jsonify({'success': False, 'message': 'No coefficients exist for input values'})
             
-            if Ylogg == AA_Alogg and Yteff == AA_Ateff and Ylogz == AA_Alogz and Yvel == AA_vel:
+            if Ylogg == AA_Alogg and Yteff == AA_Ateff and Ylogz == AA_Alogz and Yvel == AA_Avel:
                 read_line = file.readline()
                 fields = read_line.strip().split()
                 Zlogg = float(fields[0])
